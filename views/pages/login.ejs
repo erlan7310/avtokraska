@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Авторизация</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(/images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						Авторизация
+					</span>
+				</div>
+
+				<form class="login100-form validate-form" method="post" action="/admin/login" autocomplete="off">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Требуется имя пользователя ">
+						<span class="label-input100">Имя пользователя</span>
+						<input class="input100" type="text" name="username" placeholder="Введите имя пользователя">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Необходим пароль">
+						<span class="label-input100">Пароль</span>
+						<input class="input100" type="password" name="password" placeholder="Введите пароль">
+						<span class="focus-input100"></span>
+					</div>
+
+          <% if (messages.error) { %>
+            <div class="alert alert-danger" role="alert" style="width: 100%;"><%= messages.error %></div>
+          <% } %>
+
+					<div class="flex-sb-m w-full p-b-30">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="rememberMe">
+							<label class="label-checkbox100" for="ckb1">
+								Запомнить меня
+							</label>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Войти
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<div class="container-fluid">
+	<div class="card mb-3">
+		<div class="card-header">
+			<div style="display: flex; align-items: center; justify-content: space-between;">
+				<span><i class="fa fa-table"></i> Пользователи</span>
+				<div>
+					<a class="btn btn-primary" href="/admin/users/add" role="button">Добавить</a>
+				</div>
+			</div>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Фамилия</th>
+							<th>Имя</th>
+							<th>Имя пользователя</th>
+							<th>Роль</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Фамилия</th>
+							<th>Имя</th>
+							<th>Имя пользователя</th>
+							<th>Роль</th>
+							<th></th>
+						</tr>
+					</tfoot>
+					<tbody>
+						<% users.forEach(user => { %>
+							<tr>
+								<td><%= user.surname %></td>
+								<td><%= user.name %></td>
+								<td><%= user.username %></td>
+								<td><%= user.role.name %></td>
+								<td>
+									<div class="dropdown">
+										<button type="button" class="btn btn-link" id="productsDropdownMenu" data-toggle="dropdown"
+											aria-haspopup="true" aria-expanded="false">
+											<i class="fa fa-bars" aria-hidden="true"></i>
+										</button>
+										<div class="dropdown-menu" aria-labelledby="productsDropdownMenu">
+											<a class="dropdown-item" href="/admin/users/edit/<%= user.id %>">Редактировать</a>
+											<a class="dropdown-item" href="/admin/users/delete/<%= user.id %>">Удалить</a>
+											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#changePassModal" data-whatever="<%= user.id %>">Сменить пароль</a>
+										</div>
+									</div>
+								</td>
+							</tr>
+						<% }) %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="changePassModal" tabindex="-1" role="dialog" aria-labelledby="changePassModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="changePassModalLabel">Смена пароля пользователя</h5>
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="changePassForm">
+						<div class="form-group">
+							<label for="password"><span style="color: red;">*</span> Пароль</label>
+							<div class="input-group">
+								<input type="password" class="form-control" id="password" name="password" required>
+								<div class="input-group-append">
+									<button class="btn btn-secondary" type="button" id="togglePassword"><i class="fa fa-eye" aria-hidden="true"></i></button>
+									<button class="btn btn-secondary" type="button" id="generatePassBtn">Генерировать</button>
+								</div>
+							</div>
+							<div class="invalid-feedback">
+								Введите пароль
+							</div>
+						</div>
+						<div class="alert alert-success" role="alert" style="display: none;" id="successAlert">
+							Пароль успешно изменен.
+						</div>
+						<div class="alert alert-danger" role="alert" style="display: none;" id="errorAlert">
+							Произошла ошибка при смене пароля.
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button" data-dismiss="modal">Отмена</button>
+					<a class="btn btn-primary" id="changePassBtn" href="#">Сменить</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
