@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="card mb-3">
+    <div class="card-header">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+				<span><i class="fa fa-table"></i> Баннеры</span>
+			</div>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Номер</th>
+              <th>Текст</th>
+              <th>Фотография</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Номер</th>
+              <th>Текст</th>
+              <th>Фотография</th>
+              <th></th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <% banners.forEach(banner => { %>
+							<tr>
+								<td><%= banner.id %></td>
+								<td><%= banner.text %></td>
+								<td><img width="100px" src="<%= banner.photo %>" /></td>
+								<td>
+									<a class="dropdown-item" href="/admin/banners/edit/<%= banner.id %>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+								</td>
+							</tr>
+						<% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

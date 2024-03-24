@@ -1,7 +1,10 @@
-const getProducts = (req, res) => {
-  res.render('admin/index');
+
+const ProductsController = {
+  getProducts: (req, res) => {
+    res.render('admin/products/index');
+  }
 }
 
-module.exports = {
-  getProducts
-}
+
+
+module.exports = ProductsController;

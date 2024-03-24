@@ -49,6 +49,7 @@ model User {
 model Banner { 
   id      Int       @id @default(autoincrement())
   text    String
+  photo   String
 }
 
 model News {

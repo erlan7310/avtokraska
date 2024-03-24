@@ -8,6 +8,7 @@ const app = express();
 const adminRoutes = require('./routes/admin-routes');
 require('dotenv').config();
 const AuthController = require('./controllers/authController');
+const path = require('path');
 
 var port = process.env.PORT || '3000';
 
@@ -16,6 +17,7 @@ app.use('./css', express.static(__dirname + 'public/css'));
 app.use('./js', express.static(__dirname + 'public/js'));
 app.use('./images', express.static(__dirname + 'public/images'));
 app.use('./fonts', express.static(__dirname + 'public/fonts'));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.set('view engine', 'ejs');
 app.use(expressLayouts);

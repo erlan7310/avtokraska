@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="card mb-3">
+    <div class="card-header">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+				<span><i class="fa fa-table"></i> Категории</span>
+				<div>
+					<a class="btn btn-primary" href="/admin/categories/add" role="button">Добавить</a>
+				</div>
+			</div>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Название</th>
+              <th>Основная категория</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Название</th>
+              <th>Основная категория</th>
+              <th></th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <% categories.forEach(category => { %>
+							<tr>
+								<td><%= category.name %></td>
+								<td><%= category.parent === null ? 'Основная категория' : category.parent.name %></td>
+								<td>
+									<div class="dropdown">
+										<button type="button" class="btn btn-link" id="productsDropdownMenu" data-toggle="dropdown"
+											aria-haspopup="true" aria-expanded="false">
+											<i class="fa fa-bars" aria-hidden="true"></i>
+										</button>
+										<div class="dropdown-menu" aria-labelledby="productsDropdownMenu">
+											<a class="dropdown-item" href="/admin/categories/edit/<%= category.id %>">Редактировать</a>
+											<a class="dropdown-item" href="/admin/categories/delete/<%= category.id %>">Удалить</a>
+										</div>
+									</div>
+								</td>
+							</tr>
+						<% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,8 +2,6 @@ const { PrismaClient } = require('@prisma/client');
 const bcrypt = require('bcrypt');
 const prisma = new PrismaClient();
 
-const saltRounds = 10;
-
 const UserController = {
 	getAllUsers: async (req, res) => {
 		const users = await prisma.user.findMany({
@@ -46,10 +44,10 @@ const UserController = {
 			const user = await prisma.user.findUnique({
 				where: { id: parseInt(id, 10) }
 			});
-			const roles = await prisma.role.findMany();
 			if(!user){
 				return res.status(404).render('pages/notFound');
 			}
+			const roles = await prisma.role.findMany();
 			res.render('admin/users/edit', { user, roles });
 		} catch (error) {
 			res.status(500).send(error.message);

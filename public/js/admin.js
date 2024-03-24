@@ -78,7 +78,7 @@ $(document).ready(function() {
   let links = $('nav#mainNav ul li a');
   
   links.each(function() {
-    if ($(this).attr('href') === path) {
+    if (path.includes($(this).attr('href'))) {
       $(this).parent().addClass('active');
     }
   });
@@ -158,6 +158,14 @@ $(document).ready(function() {
 
   $('#changePassBtn').click(function() {
     $('#changePassForm').submit();
+  });
+  
+  $('#subcategoryCheckbox').change(function() {
+    if (this.checked) {
+      $('#parent').prop('disabled', false);
+    } else {
+      $('#parent').prop('disabled', true).val($('#parent option:first').val());
+    }
   });
 });
 
