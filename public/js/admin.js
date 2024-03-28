@@ -167,6 +167,23 @@ $(document).ready(function() {
       $('#parent').prop('disabled', true).val($('#parent option:first').val());
     }
   });
+
+  $('input#photo').on('change', (event) => {
+    const preview = document.getElementById('bannerPreview');
+    const file = document.getElementById('photo').files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = function() {
+      preview.src = reader.result;
+      $(preview).parent().show();
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "/images/no-photo.png"; 
+    }
+  })
 });
 
 (function($) {

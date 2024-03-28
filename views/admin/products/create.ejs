@@ -1,0 +1,83 @@
+<div class="container-fluid">
+  <div class="card mb-3">
+    <div class="card-header">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <span><i class="fa fa-table"></i> Добавление товара</span>
+        <div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <form class="needs-validation" novalidate method="POST" enctype="multipart/form-data" action="/admin/products/add">
+        <div class="form-group">
+          <label for="name"><span style="color: red;">*</span> Название</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+          <div class="invalid-feedback">
+            Введите название
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="vendorCode"><span style="color: red;">*</span> Артикул</label>
+          <input type="text" class="form-control" id="vendorCode" name="vendorCode" required>
+          <div class="invalid-feedback">
+            Введите артикул
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="volume"> Объем</label>
+          <input type="number" step="0.01" class="form-control" id="volume" name="volume" >
+        </div>
+        <div class="form-group">
+          <label for="manufacturer"><span style="color: red;">*</span> Производитель</label>
+          <input type="text" class="form-control" id="manufacturer" name="manufacturer" required>
+          <div class="invalid-feedback">
+            Введите производителя
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="color"> Цвет</label>
+          <input type="text" class="form-control" id="color" name="color" aria-describedby="colorHelpBlock">
+          <small id="colorHelpBlock" class="form-text text-muted">
+            Можно ввести несколько цветов через запятую(,).
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="description"><span style="color: red;">*</span> Описание</label>
+          <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+          <div class="invalid-feedback">
+            Введите описание
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="categories"><span style="color: red;">*</span> Категории</label>
+          <select 
+            multiple required name="categories" class="selectpicker form-control" id="categories"
+            data-live-search="true" title="Выберите категории"
+          >
+            <% categories.forEach(category=> { %>
+              <optgroup label="<%= category.name %>">
+                <% category.children.map(child => { %>
+                  <option value="<%= child.id %>"><%= child.name %></option>  
+                <% }) %>
+              </optgroup>
+            <% }) %>
+          </select>
+          <div class="invalid-feedback">
+            Выберите категории
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="photo"><span style="color: red;">*</span> Фотография товара</label>
+          <input type="file" class="form-control-file" id="photo" name="photo" required accept="image/*">
+          <div class="invalid-feedback">
+            Выберите фотографию товара
+          </div>
+        </div>
+        <div class="form-group" style="display: none;">
+          <img id="bannerPreview" class="img-thumbnail rounded mx-auto d-block" alt="Изображение" >
+        </div>
+        <button class="btn btn-primary" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -3,12 +3,12 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const expressLayouts = require('express-ejs-layouts');
 const flash = require('connect-flash');
-const authenticated = require('./middleware/authMiddleware');
 const app = express();
 const adminRoutes = require('./routes/admin-routes');
 require('dotenv').config();
 const AuthController = require('./controllers/authController');
 const path = require('path');
+const authenticated = require('./middleware/authMiddleware');
 
 var port = process.env.PORT || '3000';
 

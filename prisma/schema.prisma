@@ -22,8 +22,8 @@ model Product {
   description   String
   photo         String
   manufacturer  String
-  color         String
-  volume        Decimal
+  color         String?
+  volume        Decimal?
   vendorCode    String
   categories    Category[]  @relation("ProductToCategory")
 } 

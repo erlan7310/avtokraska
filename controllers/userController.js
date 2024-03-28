@@ -92,7 +92,7 @@ const UserController = {
 		try {
 			const { userId, password } = req.body;
 			const hashedPassword = await bcrypt.hash(password, 10);
-			console.log(userId, password);
+
 			const data = {
 				password: hashedPassword
 			};
