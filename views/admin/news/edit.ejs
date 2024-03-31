@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <div class="card mb-3">
+    <div class="card-header">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <span><i class="fa fa-newspaper-o"></i> Редактирование новости</span>
+        <div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <form class="needs-validation" novalidate method="POST" action="/admin/news/edit/<%= news.id %>" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="title"><span style="color: red;">*</span> Заголовок</label>
+          <input value="<%= news.title %>" type="text" class="form-control" id="title" name="title" required>
+          <div class="invalid-feedback">
+            Введите заголовок
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="photo"><span style="color: red;">*</span> Фотография</label>
+          <input type="file" class="form-control-file" id="photo" name="photo" accept="image/*">
+        </div>
+        <div class="form-group">
+          <img src="<%= news.previewPhoto %>" id="bannerPreview" class="img-thumbnail rounded mx-auto d-block" alt="Изображение" >
+        </div>
+        <div class="form-group">
+          <label for="content"><span style="color: red;">*</span> Содержимое</label>
+          <textarea class="form-control" id="content" name="content" rows="4" required><%= news.content %> </textarea>
+          <div class="invalid-feedback">
+            Заполните содержимое
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    tinymce.init({
+    selector: 'textarea#content',
+    language: 'ru',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+    document_base_url: `${window.location.protocol}//${window.location.host}/`,
+    relative_urls: false,
+    remove_script_host: false,
+    convert_urls: false,
+    mergetags_list: [
+      { value: 'First.Name', title: 'First Name' },
+      { value: 'Email', title: 'Email' },
+    ],
+    ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+    images_upload_url: '/admin/upload-media',
+    file_picker_callback: function(callback, value, meta) {
+    if (meta.filetype === 'media') {
+      let input = document.createElement('input');
+      input.setAttribute('type', 'file');
+      input.setAttribute('accept', 'video/*,audio/*');
+      input.onchange = function() {
+        let file = this.files[0];
+        
+        let formData = new FormData();
+        formData.append('file', file, file.name);
+
+        fetch('/admin/upload-media', {
+          method: 'POST',
+          body: formData,
+        })
+        .then(response => response.json())
+        .then(result => {
+          if (result.location) {
+            callback(result.location);
+          } else {
+            console.error("Не удалось загрузить медиафайл");
+          }
+        })
+        .catch(error => {
+          console.error("Ошибка загрузки медиафайла:", error);
+        });
+      };
+      input.click();
+    }
+  }
+  });
+  </script>
+</div>

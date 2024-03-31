@@ -10,7 +10,12 @@ const storage = multer.diskStorage({
       uploadPath = path.join(uploadPath, 'banners');
     } else if (req.baseUrl.includes('/products')) {
       uploadPath = path.join(uploadPath, 'products');
+    } else if (req.baseUrl.includes('/upload-media')) {
+      uploadPath = path.join(uploadPath, 'media');
+    } else if (req.baseUrl.includes('/news')) {
+      uploadPath = path.join(uploadPath, 'news');
     }
+    
     fs.mkdirSync(uploadPath, { recursive: true });
 
     cb(null, uploadPath);
