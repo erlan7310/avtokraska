@@ -5,6 +5,7 @@ const expressLayouts = require('express-ejs-layouts');
 const flash = require('connect-flash');
 const app = express();
 const adminRoutes = require('./routes/admin-routes');
+const routes = require('./routes/routes');
 require('dotenv').config();
 const AuthController = require('./controllers/authController');
 const path = require('path');
@@ -47,8 +48,6 @@ app.use((req, res, next) => {
 });
 app.use('/admin', authenticated, adminRoutes);
 
-app.get('', (req, res) => {
-  res.render('index');
-})
+app.use('/', routes)
 
 app.listen(port, () => console.info(`App listening on port ${port}`))

@@ -1,10 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <title>Автокраска</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/css/slick.min.css">
+    <link rel="stylesheet" href="/css/grid.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/media.css">
+    <link rel="stylesheet" href="/css/fonts.css">
   </head>
   <body>
+    <% if (useHeaderBg) { %>
+      <%- include('../partials/header-bg.ejs') %>
+    <% } else { %>
+      <%- include('../partials/header.ejs') %>
+    <% } %>
     <%- body %>
+    <div class="sticky_links">
+      <div class="hiden_links">
+        <a class="hiden_links_item" href="#"><img src="/images/icons/phone.svg" alt=""></a>
+        <a class="hiden_links_item" href="#"><img src="/images/icons/email.svg" alt=""></a>
+        <a class="hiden_links_item" href="#"><img src="/images/icons/telegram.svg" alt=""></a>
+        <a class="hiden_links_item" href="#"><img src="/images/icons/whatsapp.svg" alt=""></a>
+      </div>
+      <div class="open_links" id="open_links"><img src="/images/icons/burger.svg" alt=""></div>
+    </div>
+    <div class="mobile_fixed_menu">
+      <a href="/" class="fixed_menu_item">
+        <img src="/images/icons/home.svg" alt="">
+        <span>
+          Главная
+        </span>
+      </a>
+      <a href="/catalog" class="fixed_menu_item">
+        <img src="/images/icons/planner.svg" alt="">
+        <span>
+          Каталог
+        </span>
+      </a>
+      <a href="/news" class="fixed_menu_item ">
+        <img src="/images/icons/news.svg" alt="">
+        <span>
+          Новости
+        </span>
+      </a>
+      <a href="/contacts" class="fixed_menu_item">
+        <img src="/images/icons/contact.svg" alt="">
+        <span>
+          Контакты
+        </span>
+      </a>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer_item mobile_none col-md-2 col-lg-2">
+            <a class="footer_logo" href="#">
+              <img src="/images/logo_footer.svg" alt="">
+            </a>
+          </div>
+          <div class="footer_item col-md-3 col-4 col-lg-3">
+            <div class="footer_menu">
+              <h4 class="footer_title">
+                МЕНЮ
+              </h4>
+              <ul class="footer_menu_list main_links">
+                <li><a href="/">Главная</a></li>
+                <li><a href="/catalog">Каталог</a></li>
+                <li><a href="/news">Новости</a></li>
+                <li><a href="/contacts">Контакты</a></li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="footer_item col-md-4 col-6 col-lg-4">
+            <div class="footer_menu">
+              <h4 class="footer_title">
+                Социальные сети
+              </h4>
+              <ul class="footer_menu_list">
+                <li><a href=""><img src="/images/icons/wa-black.svg" alt=""> +996 (227) 000 047</a></li>
+                <li><a href=""><img src="/images/icons/black-telegram.svg" alt=""> +996 (227) 000 047</a></li>
+                <li><a href=""><img src="/images/icons/black-instagram.svg" alt=""> Avtokraska</a></li>
+                <li><a href=""><img src="/images/icons/black-facebook.svg" alt=""> Avtokraska</a></li>
+                <li><a href=""><img src="/images/icons/black-tiktok.svg" alt=""> Avtokraska</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer_item col-md-3 col-6 col-lg-3">
+            <div class="footer_menu">
+              <h4 class="footer_title">
+                Контакты
+              </h4>
+              <ul class="footer_menu_list">
+                <li><a href=""><img src="/images/icons/black-phone.svg" alt=""> +996 (227) 000 047</a></li>
+                <li><a href=""><img src="/images/icons/black-email.svg" alt=""> +996 (227) 000 047</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer_item mobile_show col-6 col-md-2 col-lg-2">
+            <a class="footer_logo_black" href="#">
+              <img src="/images/footer_logo_black.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/slick.min.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>

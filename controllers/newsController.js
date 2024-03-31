@@ -115,6 +115,17 @@ const NewsController = {
     } catch (error) {
       res.status(500).send(error.message);
     }
+  },
+
+  front: {
+    getNews: async (req, res) => {
+      const news = await prisma.news.findMany({
+        include: {
+          user: true
+        }
+      });
+      res.render('news', { news, useHeaderBg: true });
+    }
   }
 }
 

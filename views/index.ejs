@@ -1,10 +1,219 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Автокраска</title>
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <h1>Hello world</h1>
-  </body>
-</html>
+<section>
+  <div class="banner">
+    <div class="myslider">
+      <% banners.forEach(banner => { %>
+        <div class="item" style="background-image: url('<%= banner.photo %>')">
+          <img class="mobile_banner_img" src="<%= banner.photo %>" alt="">
+          <div class="container">
+            <div class="slider_content">
+              <h2>AVTOKRASKA.KG</h2>
+              <p><%= banner.text %></p>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<%- include('partials/manufacturers.ejs') %>
+<section class="top_sales">
+  <div class="container">
+    <div class="row">
+      <div class="head_section">
+        <h3 class="title_section">ТОП ПРОДАЖ</h3>
+        <a href="#" class="section_link">Смотреть все товары</a>
+      </div>
+
+      <div class="col-4 col-sm-4 col-lg-4 ">
+        <div class="card_block">
+          <div class="card_product">
+            <img src="/images/IMAGE.png" alt="">
+            <div class="card_product_bg">
+              <a href="#" class="link_product">Подробнее</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-4 col-lg-4 ">
+        <div class="card_block">
+          <div class="card_product">
+            <img src="/images/IMAGE2.png" alt="">
+            <div class="card_product_bg">
+              <a href="#" class="link_product">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-4 col-lg-4 ">
+        <div class="card_block">
+          <div class="card_product">
+            <img src="/images/IMAGE.png" alt="">
+            <div class="card_product_bg">
+              <a href="#" class="link_product">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 ">
+        <div class="card_block">
+          <div class="card_product">
+            <img src="/images/523225.png" alt="">
+            <div class="card_product_bg">
+              <a href="#" class="link_product">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg-6 ">
+        <div class="card_block">
+          <div class="card_product">
+            <img src="/images/CARD.jpg" alt="">
+            <div class="card_product_bg">
+              <a href="#" class="link_product">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg-6 ">
+        <div class="card_block">
+          <div class="card_product">
+            <img src="/images/CARD.jpg" alt="">
+            <div class="card_product_bg">
+              <a href="#" class="link_product">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-4 col-lg-4 ">
+        <div class="card_block">
+          <div class="card_product">
+            <img src="/images/CARD2.png" alt="">
+            <div class="card_product_bg">
+              <a href="#" class="link_product">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 col-sm-4 col-lg-4 ">
+        <div class="card_block">
+          <div class="card_product">
+            <img src="/images/CARD2.png" alt="">
+            <div class="card_product_bg">
+              <a href="#" class="link_product">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 col-sm-4 col-lg-4 ">
+        <div class="card_block">
+          <div class="card_product">
+            <img src="/images/CARD2.png" alt="">
+            <div class="card_product_bg">
+              <a href="#" class="link_product">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section_news">
+  <div class="container">
+    <div class="row">
+      <div class="head_section">
+        <h3 class="title_section">НОВОСТИ</h3>
+        <a href="#" class="section_link">Читать все новости</a>
+      </div>
+      <div class="col-6 col-md-6 col-lg-3">
+        <div class="cart_news">
+          <div class="cart_news_img">
+            <img src="/images/ochki.png" alt="">
+          </div>
+          <div class="cart_news_content">
+            <div class="cart_news_date">
+              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
+              <span>15/10/2024</span>
+            </div>
+            <div class="cart_news_content_text">
+              <h3>Заголовок новости</h3>
+              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
+                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
+            </div>
+            <a href="#" class="cart_news_link">
+              ПОДРОБНЕЕ
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-6 col-lg-3">
+        <div class="cart_news">
+          <div class="cart_news_img">
+            <img src="/images/ochki.png" alt="">
+          </div>
+          <div class="cart_news_content">
+            <div class="cart_news_date">
+              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
+              <span>15/10/2024</span>
+            </div>
+            <div class="cart_news_content_text">
+              <h3>Заголовок новости</h3>
+              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
+                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
+            </div>
+            <a href="#" class="cart_news_link">
+              ПОДРОБНЕЕ
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-6 col-lg-3">
+        <div class="cart_news">
+          <div class="cart_news_img">
+            <img src="/images/ochki.png" alt="">
+          </div>
+          <div class="cart_news_content">
+            <div class="cart_news_date">
+              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
+              <span>15/10/2024</span>
+            </div>
+            <div class="cart_news_content_text">
+              <h3>Заголовок новости</h3>
+              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
+                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
+            </div>
+            <a href="#" class="cart_news_link">
+              ПОДРОБНЕЕ
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-6 col-lg-3">
+        <div class="cart_news">
+          <div class="cart_news_img">
+            <img src="/images/ochki.png" alt="">
+          </div>
+          <div class="cart_news_content">
+            <div class="cart_news_date">
+              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
+              <span>15/10/2024</span>
+            </div>
+            <div class="cart_news_content_text">
+              <h3>Заголовок новости</h3>
+              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
+                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
+            </div>
+            <a href="#" class="cart_news_link">
+              ПОДРОБНЕЕ
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

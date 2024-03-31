@@ -42,6 +42,13 @@ const BannersController = {
     } catch (error) {
       res.status(500).send(error.message);
     }
+  },
+
+  front: {
+    getBanners: async (req, res) => {
+      const banners = await prisma.banner.findMany();
+      res.render('index', { banners, useHeaderBg: false });
+    }
   }
 };
 

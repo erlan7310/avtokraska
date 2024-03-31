@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Jost';
+    src: url('../fonts/Jost-Bold.eot');
+    src: url('../fonts/Jost-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-Bold.woff2') format('woff2'),
+    url('../fonts/Jost-Bold.woff') format('woff'),
+    url('../fonts/Jost-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../fonts/Jost-Black.eot');
+    src: url('../fonts/Jost-Black.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-Black.woff2') format('woff2'),
+    url('../fonts/Jost-Black.woff') format('woff'),
+    url('../fonts/Jost-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../fonts/Jost-ExtraBold.eot');
+    src: url('../fonts/Jost-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-ExtraBold.woff2') format('woff2'),
+    url('../fonts/Jost-ExtraBold.woff') format('woff'),
+    url('../fonts/Jost-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../fonts/Jost-SemiBold.eot');
+    src: url('../fonts/Jost-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-SemiBold.woff2') format('woff2'),
+    url('../fonts/Jost-SemiBold.woff') format('woff'),
+    url('../fonts/Jost-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../fonts/Jost-Light.eot');
+    src: url('../fonts/Jost-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-Light.woff2') format('woff2'),
+    url('../fonts/Jost-Light.woff') format('woff'),
+    url('../fonts/Jost-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../fonts/Jost-Medium.eot');
+    src: url('../fonts/Jost-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-Medium.woff2') format('woff2'),
+    url('../fonts/Jost-Medium.woff') format('woff'),
+    url('../fonts/Jost-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../fonts/Jost-ExtraLight.eot');
+    src: url('../fonts/Jost-ExtraLight.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-ExtraLight.woff2') format('woff2'),
+    url('../fonts/Jost-ExtraLight.woff') format('woff'),
+    url('../fonts/Jost-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../fonts/Jost-Regular.eot');
+    src: url('../fonts/Jost-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-Regular.woff2') format('woff2'),
+    url('../fonts/Jost-Regular.woff') format('woff'),
+    url('../fonts/Jost-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../fonts/../fonts/Jost-Thin.eot');
+    src: url('../fonts/Jost-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-Thin.woff2') format('woff2'),
+    url('../fonts/Jost-Thin.woff') format('woff'),
+    url('../fonts/Jost-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../fonts/Jost-Italic.eot');
+    src: url('../fonts/Jost-Italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Jost-Italic.woff2') format('woff2'),
+    url('../fonts/Jost-Italic.woff') format('woff'),
+    url('../fonts/Jost-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
