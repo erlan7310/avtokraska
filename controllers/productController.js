@@ -143,17 +143,6 @@ const ProductsController = {
     } catch (error) {
       res.status(500).send(error.message);
     }
-  },
-
-  front: {
-    getProducts: async(req, res) => {
-      const products = await prisma.product.findMany({
-        include: {
-          categories: true
-        }
-      });
-      res.render('catalog', { products, useHeaderBg: true });
-    }
   }
 }
 

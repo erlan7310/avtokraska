@@ -13,20 +13,12 @@
       <div class="mobile_search_input_block">
         <input class="mobile_search_input" type="text">
         <div class="mobile_search_hint">
-          <ul class="mobile_search_hint_list">
-            <li><span>Результат не найден</span></li>
-            <li><a href="#">Универсальная шпатлевка <img class="link_arrow_right" src="/images/icons/ph_arrow-right.svg"
-                  alt=""></a></li>
-            <li><a href="#">Универсальная шпатлевка <img class="link_arrow_right" src="/images/icons/ph_arrow-right.svg"
-                  alt=""></a></li>
-            <li><a href="#">Универсальная шпатлевка <img class="link_arrow_right" src="/images/icons/ph_arrow-right.svg"
-                  alt=""></a></li>
-          </ul>
+          <ul class="mobile_search_hint_list"></ul>
         </div>
       </div>
       <div class="mobile_menu_items">
         <div class="mobile_menu_item">
-          <a class="mobile_menu_link active" href="/">Главная</a>
+          <a class="mobile_menu_link" href="/">Главная</a>
         </div>
         <div class="mobile_menu_item">
           <div class="accordion">
@@ -35,101 +27,25 @@
                   alt=""></div>
               <div class="accordion-content">
                 <div class="sub-accordion">
-                  <div class="sub-accordion-item">
-                    <div class="sub-accordion-header">Подраздел 1.1 <img class="sub_arrow_accordion"
-                        src="/images/icons/arrowDown.svg" alt=""></div>
-                    <div class="sub-accordion-content">
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
+                  <a class="accordion_link" href="/catalog">Все</a>
+                  <% categories.forEach(category => { %>
+                    <div class="sub-accordion-item">
+                      <div class="sub-accordion-header"><%= category.name %> <img class="sub_arrow_accordion"
+                          src="/images/icons/arrowDown.svg" alt=""></div>
+                      <div class="sub-accordion-content">
+                        <% category.children.forEach(child => { %>
+                          <a class="accordion_link" href="/catalog?categoryId=<%=child.id%>"><%= child.name %></a>
+                        <% }) %>
+                      </div>
                     </div>
-                  </div>
-                  <div class="sub-accordion-item">
-                    <div class="sub-accordion-header">Подраздел 1.2 <img class="sub_arrow_accordion"
-                        src="/images/icons/arrowDown.svg" alt=""></div>
-                    <div class="sub-accordion-content">
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                    </div>
-                  </div>
-                  <div class="sub-accordion-item">
-                    <div class="sub-accordion-header">Подраздел 1.3 <img class="sub_arrow_accordion"
-                        src="/images/icons/arrowDown.svg" alt=""></div>
-                    <div class="sub-accordion-content">
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                    </div>
-                  </div>
-                  <div class="sub-accordion-item">
-                    <div class="sub-accordion-header">Подраздел 1.1 <img class="sub_arrow_accordion"
-                        src="/images/icons/arrowDown.svg" alt=""></div>
-                    <div class="sub-accordion-content">
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                    </div>
-                  </div>
-                  <div class="sub-accordion-item">
-                    <div class="sub-accordion-header">Подраздел 1.2 <img class="sub_arrow_accordion"
-                        src="/images/icons/arrowDown.svg" alt=""></div>
-                    <div class="sub-accordion-content">
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                    </div>
-                  </div>
-                  <div class="sub-accordion-item">
-                    <div class="sub-accordion-header">Подраздел 1.3 <img class="sub_arrow_accordion"
-                        src="/images/icons/arrowDown.svg" alt=""></div>
-                    <div class="sub-accordion-content">
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                    </div>
-                  </div>
-                  <div class="sub-accordion-item">
-                    <div class="sub-accordion-header">Подраздел 1.1 <img class="sub_arrow_accordion"
-                        src="/images/icons/arrowDown.svg" alt=""></div>
-                    <div class="sub-accordion-content">
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                      <a class="accordion_link" href="#">Ссылкаааа</a>
-                    </div>
-                  </div>
-                  <div class="sub-accordion-item">
-                    <div class="sub-accordion-header">Подраздел 1.2 <img class="sub_arrow_accordion"
-                        src="/images/icons/arrowDown.svg" alt=""></div>
-                    <div class="sub-accordion-content">
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 2</a>
-                    </div>
-                  </div>
-                  <div class="sub-accordion-item">
-                    <div class="sub-accordion-header">Подраздел 1.3 <img class="sub_arrow_accordion"
-                        src="/images/icons/arrowDown.svg" alt=""></div>
-                    <div class="sub-accordion-content">
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                      <a class="accordion_link" href="#">Ссылкаааа 3</a>
-                    </div>
-                  </div>
+                  <% }) %>
                 </div>
               </div>
             </div>
-
           </div>
+        </div>
+        <div class="mobile_menu_item">
+          <a class="mobile_menu_link" href="/news">Новости</a>
         </div>
         <div class="mobile_menu_item">
           <a class="mobile_menu_link" href="/contacts">Контакты</a>
@@ -138,7 +54,6 @@
     </div>
   </div>
   <div class="container">
-
     <div class="header row">
       <div class="col-md-1 col-lg-1">
         <div class="logo">
@@ -158,10 +73,7 @@
           <div class="search_block">
             <input class="search_input" type="text">
             <div class="search_hint">
-              <ul class="search_hint_list">
-                <li>Результат не найден</li>
-                <li><a href="#">Универсальная шпатлевка</a></li>
-              </ul>
+              <ul class="search_hint_list"></ul>
             </div>
           </div>
         </div>
@@ -171,10 +83,10 @@
           <ul>
             <li><a class="social_links_item" href=""><img src="/images/icons/location.svg" alt=""> ул.
                 Садыгалиева, 6</a></li>
-            <li><a class="social_links_item" href=""><img src="/images/icons/phone.svg" alt=""> +996 (227) 000
+            <li><a class="social_links_item" href="tel:+996227000047"><img src="/images/icons/phone.svg" alt=""> +996 (227) 000
                 047</a></li>
             <li>
-              <a href="#" class="social_item"><img src="/images/icons/instagram.svg" alt=""></a>
+              <a href="https://www.instagram.com/avtokraska.kg/" class="social_item"><img src="/images/icons/instagram.svg" alt=""></a>
               <a href="#" class="social_item"><img src="/images/icons/facebook.svg" alt=""></a>
               <a href="#" class="social_item"><img src="/images/icons/tiktok.svg" alt=""></a>
             </li>

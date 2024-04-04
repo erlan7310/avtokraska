@@ -1,0 +1,23 @@
+<section class="section_no_bg">
+  <div class="container" style="overflow-x: scroll;">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="go_back">
+          <img src="/images/icons/arrow-back.svg" alt="">
+          <a href="#" onclick="window.history.back(); return false;">Назад</a>
+        </div>
+        <div class="date_of_news">
+          <span> <img src="/images/icons/time-line.svg" alt=""><%= formatDate(news.updatedAt).replaceAll('/', '.') %></span>
+          <span> <img src="/images/icons/user-bold.svg" alt=""><%= news.user.name %></span>
+        </div>
+        <h2 class="title_of_news"><%= news.title %></h2>
+        <div class="image_news">
+          <img src="<%= news.previewPhoto %>" alt="">
+        </div>
+        <div class="news_text">
+          <%- news.content %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

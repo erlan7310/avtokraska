@@ -1,255 +1,44 @@
-<div class="mobile_catalog_btn">
-  <button id="btn_open_catalog" class="btn_open-catalog">ВЫБРАТЬ КАТЕГОРИЮ</button>
-</div>
 <section class="section_no_bg">
   <div class="container">
     <div class="row">
-      <div class="col-6 col-md-6 col-lg-4">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
+      <%
+        const pageRange = calculatePageRange(currentPage, totalPages);
+      %>
+      <% news.forEach((item, index) => { %>
+        <% let classes = ''; %>
+        <% if([0, 1, 4, 5, 10, 11].includes(index)){ classes = 'col-6 col-md-6 col-lg-4'; }%>
+        <% if([2, 6, 9].includes(index)){ classes = 'col-12 col-md-12 col-lg-4'; } %>
+        <% if([3].includes(index)){ classes = 'col-12 col-md-12 col-lg-12'; }%>
+        <div class="<%= classes %>">
+          <div class="cart_news">
+            <div class="cart_news_img">
+              <img src="<%= item.previewPhoto %>" alt="">
             </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
+            <div class="cart_news_content">
+              <div class="cart_news_date">
+                <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
+                <span><%= formatDate(item.updatedAt) %></span>
+              </div>
+              <div class="cart_news_content_text">
+                <h3><%= item.title %></h3>
+                <p><%= truncateText(extractTextFromHTML(item.content), 110) %></p>
+              </div>
+              <a href="/news/<%= item.id %>" class="cart_news_link">
+                ПОДРОБНЕЕ
+              </a>
             </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-6 col-lg-4">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
           </div>
         </div>
-      </div>
-      <div class="col-6 col-md-6 col-lg-4">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!--          по 1-->
-      <div class="col-12 col-md-12 col-lg-12">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-      <!--            по 3-->
-      <div class="col-6 col-md-6 col-lg-4">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-6 col-lg-4">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-6 col-lg-4">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!--          по 1-->
-      <div class="col-12 col-md-12 col-lg-12">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-      <!--            по 2-->
-      <div class="col-6 col-md-6 col-lg-6">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-6 col-lg-6">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!--          по 1-->
-      <div class="col-12 col-md-12 col-lg-12">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
+      <% }) %>
       <div class="col-lg-12">
         <div class="pagination">
           <ul class="pagination_list">
-            <li><a href="" class="pagination_item active">1</a></li>
-            <li><a href="" class="pagination_item">2</a></li>
-            <li><a href="" class="pagination_item">3</a></li>
-            <li><a href="" class="dot"><span class="dots"></span></a></li>
+            <% pageRange.forEach(page => { %>
+              <li><a href="/news?page=<%=page%>" class="pagination_item <%= page === currentPage ? 'active' : '' %>"><%= page %></a></li>
+            <% }) %>
+            <% if(totalPages > 4){ %>
+              <li><a href="" class="dot"><span class="dots"></span></a></li>
+            <% } %>
           </ul>
         </div>
       </div>

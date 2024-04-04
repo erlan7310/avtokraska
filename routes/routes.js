@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const BannersController = require('../controllers/bannersController');
-const ProductsController = require('../controllers/productController');
-const NewsController = require('../controllers/newsController');
-const ContactsController = require('../controllers/contactsController');
+const FrontController = require('../controllers/frontController');
 
-router.get('/', BannersController.front.getBanners);
-router.get('/catalog', ProductsController.front.getProducts);
-router.get('/news', NewsController.front.getNews);
-router.get('/contacts', ContactsController.front.getContacts);
+router.get('/', FrontController.getMain);
+router.get('/catalog', FrontController.getProducts);
+router.get('/catalog/:id', FrontController.getProduct);
+router.get('/news', FrontController.getNews);
+router.get('/news/:id', FrontController.getNewsById);
+router.get('/contacts', FrontController.getContacts);
+router.get('/search-products', FrontController.searchProducts);
 
 module.exports = router;

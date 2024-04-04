@@ -313,7 +313,7 @@
     }
 
     .slider_content {
-        height: 208px;
+        height: 180px;
         padding: 0 15px 0 0;
         position: absolute;
         bottom: 0;
@@ -481,7 +481,7 @@
     }
     .mobile_fixed_menu {
         display: flex;
-        z-index: 999;
+        z-index: 2;
     }
 }
 

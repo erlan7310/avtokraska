@@ -29,7 +29,7 @@ const BannersController = {
     let newData = { text };
     if (req.file) {
       const photoPath = req.file.path;
-      newData.photo = `/${photoPath.replace('\\', '/')}`;
+      newData.photo = `/${photoPath.replaceAll('\\', '/')}`;
     }
     
     try {
@@ -41,13 +41,6 @@ const BannersController = {
       res.redirect('/admin/banners');
     } catch (error) {
       res.status(500).send(error.message);
-    }
-  },
-
-  front: {
-    getBanners: async (req, res) => {
-      const banners = await prisma.banner.findMany();
-      res.render('index', { banners, useHeaderBg: false });
     }
   }
 };

@@ -1,3 +1,32 @@
+<div class="pp_block">
+  <div class="pp_content">
+    <div class="close_pp" id="close_pp"><img src="/images/icons/basil_cross.svg" alt=""></div>
+    <div class="pp_img">
+      <img src="/images/no-photo.png" id="photo" alt="">
+    </div>
+    <div class="pp_about_product">
+      <h4 class="pp_name_product" id="name">Название товара</h4>
+      <p id="description">Описание</p>
+      <ul class="about_product_list">
+        <li><span class="info">Производитель</span> <span id="manufacturer" >Производитель</span></li>
+        <li><span class="info">Цвет</span> <span id="color">Цвет</span></li>
+        <li><span class="info">Объём</span> <span id="volume" >Объём л.</span></li>
+      </ul>
+      <ul class="about_product_list">
+        <li><span class="info">Артикул</span> <span id="vendorCode">Артикул</span></li>
+        <li><span class="info">Категория</span> <span id="categories">Категория</span></li>
+        <li>
+          <span class="info">Поделиться</span>
+          <div class="social_share">
+            <a href="#" id="facebook-link" target="_blank"><img src="/images/icons/black-facebook.svg" alt=""></a>
+            <a href="#" id="telegram-link" target="_blank"><img src="/images/icons/black-telegram.svg" alt=""></a>
+            <a href="#" id="whatsapp-link" target="_blank"><img src="/images/icons/wa-black.svg" alt=""></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 <section>
   <div class="banner">
     <div class="myslider">
@@ -21,105 +50,25 @@
     <div class="row">
       <div class="head_section">
         <h3 class="title_section">ТОП ПРОДАЖ</h3>
-        <a href="#" class="section_link">Смотреть все товары</a>
+        <a href="/catalog" class="section_link">Смотреть все товары</a>
       </div>
-
-      <div class="col-4 col-sm-4 col-lg-4 ">
-        <div class="card_block">
-          <div class="card_product">
-            <img src="/images/IMAGE.png" alt="">
-            <div class="card_product_bg">
-              <a href="#" class="link_product">Подробнее</a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4 col-sm-4 col-lg-4 ">
-        <div class="card_block">
-          <div class="card_product">
-            <img src="/images/IMAGE2.png" alt="">
-            <div class="card_product_bg">
-              <a href="#" class="link_product">Подробнее</a>
+      <% products.forEach((item, index) => { %>
+        <% let classes = ''; %>
+        <% if([0, 1, 7, 8].includes(index)){ classes = 'col-6 col-sm-4 col-lg-4' } %>
+        <% if([2, 6].includes(index)){ classes = 'col-12 col-sm-4 col-lg-4' } %>
+        <% if([3].includes(index)){ classes = 'col-4 col-sm-12 col-lg-12' }%>
+        <% if([4, 5].includes(index)){ classes = 'col-4 col-sm-6 col-lg-6' }%>
+        <div class="<%= classes %>">
+          <div class="card_block">
+            <div class="card_product">
+              <img src="<%= item.photo %>" alt="">
+              <div class="card_product_bg">
+                <a href="javascript:void(0);" data-id="<%= item.id%>" onclick="openProductModal(this)" class="link_product">Подробнее</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-4 col-sm-4 col-lg-4 ">
-        <div class="card_block">
-          <div class="card_product">
-            <img src="/images/IMAGE.png" alt="">
-            <div class="card_product_bg">
-              <a href="#" class="link_product">Подробнее</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-12 ">
-        <div class="card_block">
-          <div class="card_product">
-            <img src="/images/523225.png" alt="">
-            <div class="card_product_bg">
-              <a href="#" class="link_product">Подробнее</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-6 col-lg-6 ">
-        <div class="card_block">
-          <div class="card_product">
-            <img src="/images/CARD.jpg" alt="">
-            <div class="card_product_bg">
-              <a href="#" class="link_product">Подробнее</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-6 col-lg-6 ">
-        <div class="card_block">
-          <div class="card_product">
-            <img src="/images/CARD.jpg" alt="">
-            <div class="card_product_bg">
-              <a href="#" class="link_product">Подробнее</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4 col-sm-4 col-lg-4 ">
-        <div class="card_block">
-          <div class="card_product">
-            <img src="/images/CARD2.png" alt="">
-            <div class="card_product_bg">
-              <a href="#" class="link_product">Подробнее</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-4 col-sm-4 col-lg-4 ">
-        <div class="card_block">
-          <div class="card_product">
-            <img src="/images/CARD2.png" alt="">
-            <div class="card_product_bg">
-              <a href="#" class="link_product">Подробнее</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-4 col-sm-4 col-lg-4 ">
-        <div class="card_block">
-          <div class="card_product">
-            <img src="/images/CARD2.png" alt="">
-            <div class="card_product_bg">
-              <a href="#" class="link_product">Подробнее</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <% }) %>
     </div>
   </div>
 </section>
@@ -128,92 +77,30 @@
     <div class="row">
       <div class="head_section">
         <h3 class="title_section">НОВОСТИ</h3>
-        <a href="#" class="section_link">Читать все новости</a>
+        <a href="/news" class="section_link">Читать все новости</a>
       </div>
-      <div class="col-6 col-md-6 col-lg-3">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
+      <% news.forEach(n => { %>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="cart_news">
+            <div class="cart_news_img">
+              <img src="<%= n.previewPhoto %>" alt="">
             </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
+            <div class="cart_news_content">
+              <div class="cart_news_date">
+                <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
+                <span><%= formatDate(n.updatedAt) %></span>
+              </div>
+              <div class="cart_news_content_text">
+                <h3><%= n.title %></h3>
+                <p><%= truncateText(extractTextFromHTML(n.content), 110) %></p>
+              </div>
+              <a href="/news/<%= n.id %>" class="cart_news_link">
+                ПОДРОБНЕЕ
+              </a>
             </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
           </div>
         </div>
-      </div>
-      <div class="col-6 col-md-6 col-lg-3">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-6 col-lg-3">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-6 col-lg-3">
-        <div class="cart_news">
-          <div class="cart_news_img">
-            <img src="/images/ochki.png" alt="">
-          </div>
-          <div class="cart_news_content">
-            <div class="cart_news_date">
-              <img class="calendar_icon" src="/images/icons/calendar.svg" alt="">
-              <span>15/10/2024</span>
-            </div>
-            <div class="cart_news_content_text">
-              <h3>Заголовок новости</h3>
-              <p>Ротявтмвлтя ым твыдлм тывд млвыдл мт ьыдлвмтвы
-                длмьяытвтыявтчатпnлотатлиьыилдьяавбявиачьчьч ...</p>
-            </div>
-            <a href="#" class="cart_news_link">
-              ПОДРОБНЕЕ
-            </a>
-          </div>
-        </div>
-      </div>
+      <% }) %>
     </div>
   </div>
 </section>
