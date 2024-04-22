@@ -38,11 +38,7 @@ const ProductsController = {
       if(!Array.isArray(validCategories)){
         validCategories = validCategories ? [validCategories] : [];
       }
-      res.status(200).send(JSON.stringify({
-        connect: categories,
-        test: [...categories],
-        rese: [...categories].map((categoryId) => ({ id: parseInt(categoryId) }))
-      }));
+
       await prisma.product.create({
         data: {
           name,
