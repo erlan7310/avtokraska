@@ -28,10 +28,15 @@ const ProductsController = {
     try {
       const { name, description, manufacturer, color, volume, vendorCode, categories } = req.body;
       let photoUrl = '';
+      let validCategories = categories;
       
       if(req.file){
         const photoPath = req.file.path;
         photoUrl = `/${photoPath.replaceAll('\\', '/')}`;
+      }
+
+      if(!Array.isArray(validCategories)){
+        validCategories = validCategories ? [validCategories] : [];
       }
       res.status(200).send(JSON.stringify({
         connect: categories,
@@ -48,7 +53,7 @@ const ProductsController = {
           volume: parseFloat(volume),
           vendorCode,
           categories: {
-            connect: [...categories].map((categoryId) => ({ id: parseInt(categoryId) }))
+            connect: validCategories.map((categoryId) => ({ id: parseInt(categoryId) }))
           }
         }
       });
