@@ -33,6 +33,7 @@ const ProductsController = {
         const photoPath = req.file.path;
         photoUrl = `/${photoPath.replaceAll('\\', '/')}`;
       }
+      console.log([...categories].map((categoryId) => ({ id: parseInt(categoryId) })));
 
       await prisma.product.create({
         data: {
