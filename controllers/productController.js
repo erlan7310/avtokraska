@@ -34,7 +34,7 @@ const ProductsController = {
         photoUrl = `/${photoPath.replaceAll('\\', '/')}`;
       }
       res.status(200).send(JSON.stringify({
-        connect: [...categories].map((categoryId) => ({ id: parseInt(categoryId) }))
+        connect: categories
       }));
       await prisma.product.create({
         data: {
