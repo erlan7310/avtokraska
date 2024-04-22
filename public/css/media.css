@@ -413,7 +413,7 @@
     }
 
     .sticky_links {
-        position: sticky;
+        position: fixed;
         right: 37px;
     }
 
@@ -475,9 +475,6 @@
     .section_no_bg {
         padding: 20px 0;
         position: relative;
-    }
-    body{
-        padding-bottom: 140px;
     }
     .mobile_fixed_menu {
         display: flex;

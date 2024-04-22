@@ -146,6 +146,4 @@ const ProductsController = {
   }
 }
 
-
-
 module.exports = ProductsController;

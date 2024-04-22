@@ -20,6 +20,7 @@ app.use('./css', express.static(__dirname + 'public/css'));
 app.use('./js', express.static(__dirname + 'public/js'));
 app.use('./images', express.static(__dirname + 'public/images'));
 app.use('./fonts', express.static(__dirname + 'public/fonts'));
+app.use('./vendor', express.static(__dirname + 'public/vendor'));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.set('view engine', 'ejs');
