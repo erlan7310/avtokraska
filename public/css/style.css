@@ -1315,6 +1315,7 @@ header.header_with_bg {
   line-height: 30px;
   color: rgba(27, 38, 58, 1);
   margin-bottom: 20px;
+  overflow-wrap: break-word;
 }
 
 .news_images {

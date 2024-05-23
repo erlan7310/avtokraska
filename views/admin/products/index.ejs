@@ -20,6 +20,7 @@
               <th>Категории</th>
               <th>Цвет</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tfoot>
@@ -30,6 +31,7 @@
               <th>Производитель</th>
               <th>Категории</th>
               <th>Цвет</th>
+              <th></th>
               <th></th>
             </tr>
           </tfoot>
@@ -45,6 +47,7 @@
                   <% }) %>
                 </td>
                 <td><%= product.color %></td>
+                <td><%= product.topSellers ? 'Топ продаж' : '' %></td>
                 <td>
                   <div class="dropdown">
                     <button type="button" class="btn btn-link" id="productsDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

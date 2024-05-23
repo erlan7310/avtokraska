@@ -6,6 +6,9 @@ const FrontController = {
   getMain: async (req, res) => {
     const banners = await prisma.banner.findMany();
     const products = await prisma.product.findMany({
+      where: {
+        topSellers: true
+      },
       take: 9,
       orderBy: {
         id: 'desc'

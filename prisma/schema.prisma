@@ -25,6 +25,7 @@ model Product {
   color         String?
   volume        Decimal?
   vendorCode    String
+  topSellers    Boolean
   categories    Category[]  @relation("ProductToCategory")
 } 
 

@@ -26,10 +26,11 @@ const ProductsController = {
 
   createProduct: async (req, res) => {
     try {
-      const { name, description, manufacturer, color, volume, vendorCode, categories } = req.body;
+      const { name, description, manufacturer, color, volume, vendorCode, categories, topSellers } = req.body;
       let photoUrl = '';
       let validCategories = categories;
-      
+      const isTopSellers = topSellers === 'on' ? true : false;
+
       if(req.file){
         const photoPath = req.file.path;
         photoUrl = `/${photoPath.replaceAll('\\', '/')}`;
@@ -46,8 +47,9 @@ const ProductsController = {
           photo: photoUrl,
           manufacturer,
           color: color || null,
-          volume: parseFloat(volume),
+          volume: volume ? parseFloat(volume) : null,
           vendorCode,
+          topSellers: isTopSellers,
           categories: {
             connect: validCategories.map((categoryId) => ({ id: parseInt(categoryId) }))
           }
@@ -86,12 +88,13 @@ const ProductsController = {
   updateProduct: async (req, res) => {
     try {
       const { id } = req.params;
-      const { name, description, manufacturer, color, volume, vendorCode, categories } = req.body;
+      const { name, description, manufacturer, color, volume, vendorCode, categories, topSellers } = req.body;
       const product = await prisma.product.findUnique({
         where: { id: parseInt(id) },
       });
       let photoUrl = product.photo;
-      
+      const isTopSellers = topSellers === 'on' ? true : false;
+
       if(req.file){
         const photoPath = req.file.path;
         photoUrl = `/${photoPath.replaceAll('\\', '/')}`;
@@ -110,8 +113,9 @@ const ProductsController = {
         manufacturer,
         color,
         photo: photoUrl,
-        volume: parseFloat(volume),
+        volume: volume ? parseFloat(volume) : null,
         vendorCode,
+        topSellers: isTopSellers,
         categories: {
           connect: [...categories].map((categoryId) => ({ id: parseInt(categoryId) }))
         }
