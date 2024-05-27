@@ -44,7 +44,7 @@ const FrontController = {
     const productId = req.query.productId;
     const categoryId = req.query.categoryId;
     const page = parseInt(req.query.page) || 1;
-    const pageSize = 10;
+    const pageSize = 12;
     const skip = (page - 1) * pageSize;
     const whereClause = {};
 
