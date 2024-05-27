@@ -33,7 +33,7 @@
 <section class="section_no_bg">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-3">
         <div class="accordion side_catalog">
           <div class="sub-accordion accordion_scroll">
             <a class="accordion_link" href="/catalog">Все </a>
@@ -52,16 +52,13 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-9">
         <%
           const pageRange = calculatePageRange(currentPage, totalPages);
         %>
         <div class="row">
           <% products.forEach((product, index) => { %>
-            <% let classes = ''; %>
-            <% if([0, 1, 2, 3, 6, 7, 8, 9].includes(index)){ classes = 'col-lg-6'; }%>
-            <% if([4, 5].includes(index)){ classes = 'col-lg-12'; }%>
-            <div class="<%= classes %>">
+            <div class="col-lg-4">
               <div class="card_block">
                 <div class="card_product">
                   <img src="<%= product.photo %>" alt="">
