@@ -73,7 +73,7 @@
             <div class="pagination">
               <ul class="pagination_list">
                 <% pageRange.forEach(page => { %>
-                  <li><a href="/catalog?page=<%=page%><%=categoryId !== null ? `&categoryId=${categoryId}` : ''%>" class="pagination_item <%= page === currentPage ? 'active' : '' %>"><%= page %></a></li>
+                  <li><a href="/catalog?page=<%=page%><%=categoryId ? `&categoryId=${categoryId}` : ''%>" class="pagination_item <%= page === currentPage ? 'active' : '' %>"><%= page %></a></li>
                 <% }) %>
                 <% if(totalPages > 4){ %>
                   <li><a href="" class="dot"><span class="dots"></span></a></li>
